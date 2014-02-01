@@ -1,0 +1,591 @@
+// Fields are separated by one or more tabs.
+// Lines without tabs (such as these) are ignored, and can be used as comments.
+// Some fields (names, filenames) may contain spaces.
+
+// Define the splash image.  It will appear on the intro screen as soon as it
+// is loaded.  Therefore we should define it at the beginning of the
+// initialisation.
+// Note the "-", 0, and "-" field.  For an image:
+// * the second field is the tile name by which it is known (we
+//   use "-" here to indicate "don't care".  
+// * the third field is the tile cid of the tile (we just fill in 0)
+// * the fifth field is the graphical operation to perform on the loaded image
+//   file ("-" means none).  Available operations are flip ("x", "y") and
+//   rotate ("r" - right, "l" - left, "u" - 180 degrees).
+
+
+// define image to display as background
+splashscreen	-	0	resources/img/splash.jpg	-
+bg0	-	0	resources/img/bg0.png		-
+bg1	-	0	resources/img/bg1.png		-
+bg2	-	0	resources/img/bg2.png		-
+bg3	-	0	resources/img/bg3.png		-
+mana	-	0	resources/img/mana.jpg		-
+heal	-	0	resources/img/heal.jpg		-
+boss	-	0	resources/img/boss.jpg		-
+emptytile	.	1	null			-
+emptytile	#	2	null			-
+
+bgm1	resources/audio/bgm1.wav
+bgm2	resources/audio/bgm2.wav
+v	resources/audio/1v.wav
+alarm	resources/audio/alarm.wav
+ra	resources/audio/ra.wav
+ca	resources/audio/ca.wav
+row	resources/audio/row.wav
+die	resources/audio/die.wav
+wave	resources/audio/wave.wav
+start	resources/audio/start.wav
+close	resources/audio/close.wav
+exp	resources/audio/explode.wav
+
+	
+// Define animation sprite sheet.
+// The first numbers (0,0) are the topleft coordinates of the sprites.
+// The next numbers (16,16) is the size of one sprite.
+// The last numbers (0,0) is the number of pixels to skip between sprites.
+
+pml	resources/img/pml.png	0	0	100	70	0	0
+pmr	resources/img/pmr.png	0	0	100	70	0	0
+pal	resources/img/pal.png	0	0	100	70	0	0
+par	resources/img/par.png	0	0	100	70	0	0
+sl	resources/img/sl.png	0	0	100	70	0	0
+sr	resources/img/sr.png	0	0	100	70	0	0
+
+lstand		-	0	pal	0	-
+rstand		-	0	par	0	-
+
+pml1		-	0	pml	0	-
+pml2		-	0	pml	1	-
+pml3		-	0	pml	2	-
+pml4		-	0	pml	3	-
+pml5		-	0	pml	4	-
+pml6		-	0	pml	5	-
+pml7		-	0	pml	6	-
+pml8		-	0	pml	7	-
+
+pmr1		-	0	pmr	0	-
+pmr2		-	0	pmr	1	-
+pmr3		-	0	pmr	2	-
+pmr4		-	0	pmr	3	-
+pmr5		-	0	pmr	4	-
+pmr6		-	0	pmr	5	-
+pmr7		-	0	pmr	6	-
+pmr8		-	0	pmr	7	-
+pml	pml1;pml2;pml3;pml4;pml5;pml6;pml7;pml8;	0.5		true
+pmr	pmr1;pmr2;pmr3;pmr4;pmr5;pmr6;pmr7;pmr8;	0.5		true
+
+pal1		-	0	pal	0	-
+pal2		-	0	pal	1	-
+pal3		-	0	pal	2	-
+pal4		-	0	pal	3	-
+pal5		-	0	pal	4	-
+pal6		-	0	pal	5	-
+pal7		-	0	pal	6	-
+pal8		-	0	pal	7	-
+
+par1		-	0	par	0	-
+par2		-	0	par	1	-
+par3		-	0	par	2	-
+par4		-	0	par	3	-
+par5		-	0	par	4	-
+par6		-	0	par	5	-
+par7		-	0	par	6	-
+par8		-	0	par	7	-
+
+pal	pal1;pal2;pal3;pal4;pal5;pal6;pal7;pal8;	0.5		true
+par	par1;par2;par3;par4;par5;par6;par7;par8;	0.5		true
+
+sr1		-	0	sr	0	-
+sr2		-	0	sr	1	-
+sr3		-	0	sr	2	-
+sr4		-	0	sr	3	-
+sr5		-	0	sr	4	-
+sr6		-	0	sr	5	-
+sr7		-	0	sr	6	-
+sr8		-	0	sr	7	-
+
+sl1		-	0	sl	0	-
+sl2		-	0	sl	1	-
+sl3		-	0	sl	2	-
+sl4		-	0	sl	3	-
+sl5		-	0	sl	4	-
+sl6		-	0	sl	5	-
+sl7		-	0	sl	6	-
+sl8		-	0	sl	7	-
+
+sl	sl1;sl2;sl3;sl4;sl5;sl6;sl7;sl8;	0.5		true
+sr	sr1;sr2;sr3;sr4;sr5;sr6;sr7;sr8;	0.5		true
+
+lfires	resources/img/lfire.png	0	0	60	30	0	0
+rfires	resources/img/rfire.png	0	0	60	30	0	0
+
+lfire1		-	0	lfires	0	-
+lfire2		-	0	lfires	1	-
+rfire1		-	0	rfires	0	-
+rfire2		-	0	rfires	1	-
+
+lfire	lfire1;lfire2;	0.5	true
+rfire	rfire1;rfire2;	0.5	true
+
+arrows	resources/img/arrow.png	0	0	60	60	0	0
+
+
+arrow1		-	0	arrows	0	-
+arrow2		-	0	arrows	1	-
+
+
+arrow	arrow1;arrow2;	0.5	true
+
+lights	resources/img/light.png	0	0	60	60	0	0
+
+
+light1		-	0	lights	0	-
+light2		-	0	lights	1	-
+
+
+light	light1;light2;	0.5	true
+
+bl	resources/img/bl.png	0	0	120	120	0	0
+br	resources/img/br.png	0	0	120	120	0	0
+
+bl1		-	0	bl	0	-
+bl2		-	0	bl	1	-
+bl3		-	0	bl	2	-
+bl4		-	0	bl	3	-
+bl5		-	0	bl	4	-
+bl6		-	0	bl	5	-
+bl7		-	0	bl	6	-
+bl8		-	0	bl	7	-
+
+br1		-	0	br	0	-
+br2		-	0	br	1	-
+br3		-	0	br	2	-
+br4		-	0	br	3	-
+br5		-	0	br	4	-
+br6		-	0	br	5	-
+br7		-	0	br	6	-
+br8		-	0	br	7	-
+
+bl	bl1;bl2;bl3;bl4;bl5;bl6;bl7;bl8;	0.6		true
+br	br1;br2;br3;br4;br5;br6;br7;br8;	0.6		true
+
+pdl	resources/img/pdl.png	0	0	100	70	0	0
+pdr	resources/img/pdr.png	0	0	100	70	0	0
+
+pdl1		-	0	pdl	0	-
+pdl2		-	0	pdl	1	-
+pdl3		-	0	pdl	2	-
+pdl4		-	0	pdl	3	-
+pdl5		-	0	pdl	4	-
+pdl6		-	0	pdl	5	-
+pdl7		-	0	pdl	6	-
+pdl8		-	0	pdl	7	-
+
+pdr1		-	0	pdr	0	-
+pdr2		-	0	pdr	1	-
+pdr3		-	0	pdr	2	-
+pdr4		-	0	pdr	3	-
+pdr5		-	0	pdr	4	-
+pdr6		-	0	pdr	5	-
+pdr7		-	0	pdr	6	-
+pdr8		-	0	pdr	7	-
+
+pdl	pdl1;pdl2;pdl3;pdl4;pdl5;pdl6;pdl7;pdl8;	0.5		true
+pdr	pdr1;pdr2;pdr3;pdr4;pdr5;pdr6;pdr7;pdr8;	0.5		true
+
+
+cml	resources/img/cml.png	0	0	100	70	0	0
+cmr	resources/img/cmr.png	0	0	100	70	0	0
+cal	resources/img/cal.png	0	0	100	70	0	0
+car	resources/img/car.png	0	0	100	70	0	0
+
+
+clstand		-	0	cml	0	-
+crstand		-	0	cmr	0	-
+
+cml1		-	0	cml	0	-
+cml2		-	0	cml	1	-
+cml3		-	0	cml	2	-
+cml4		-	0	cml	3	-
+cml5		-	0	cml	4	-
+cml6		-	0	cml	5	-
+cml7		-	0	cml	6	-
+cml8		-	0	cml	7	-
+
+cmr1		-	0	cmr	0	-
+cmr2		-	0	cmr	1	-
+cmr3		-	0	cmr	2	-
+cmr4		-	0	cmr	3	-
+cmr5		-	0	cmr	4	-
+cmr6		-	0	cmr	5	-
+cmr7		-	0	cmr	6	-
+cmr8		-	0	cmr	7	-
+cml		cml1;cml2;cml3;cml4;cml5;cml6;cml7;cml8;	0.5		true
+cmr		cmr1;cmr2;cmr3;cmr4;cmr5;cmr6;cmr7;cmr8;	0.5		true
+
+cal1		-	0	cal	0	-
+cal2		-	0	cal	1	-
+cal3		-	0	cal	2	-
+cal4		-	0	cal	3	-
+cal5		-	0	cal	4	-
+cal6		-	0	cal	5	-
+cal7		-	0	cal	6	-
+cal8		-	0	cal	7	-
+
+car1		-	0	car	0	-
+car2		-	0	car	1	-
+car3		-	0	car	2	-
+car4		-	0	car	3	-
+car5		-	0	car	4	-
+car6		-	0	car	5	-
+car7		-	0	car	6	-
+car8		-	0	car	7	-
+
+cal	cal1;cal2;cal3;cal4;cal5;cal6;cal7;cal8;	0.2		true
+car	car1;car2;car3;car4;car5;car6;car7;car8;	0.2		true
+
+cdl	resources/img/cdl.png	0	0	100	70	0	0
+cdr	resources/img/cdr.png	0	0	100	70	0	0
+
+cdl1		-	0	cdl	0	-
+cdl2		-	0	cdl	1	-
+cdl3		-	0	cdl	2	-
+cdl4		-	0	cdl	3	-
+cdl5		-	0	cdl	4	-
+cdl6		-	0	cdl	5	-
+cdl7		-	0	cdl	6	-
+cdl8		-	0	cdl	7	-
+
+cdr1		-	0	cdr	0	-
+cdr2		-	0	cdr	1	-
+cdr3		-	0	cdr	2	-
+cdr4		-	0	cdr	3	-
+cdr5		-	0	cdr	4	-
+cdr6		-	0	cdr	5	-
+cdr7		-	0	cdr	6	-
+cdr8		-	0	cdr	7	-
+
+cdl	cdl1;cdl2;cdl3;cdl4;cdl5;cdl6;cdl7;cdl8;cdl8;	0.5		true
+cdr	cdr1;cdr2;cdr3;cdr4;cdr5;cdr6;cdr7;cdr8;cdl8;	0.5		true
+
+
+reml	resources/img/reml.png	0	0	100	70	0	0
+remr	resources/img/remr.png	0	0	100	70	0	0
+real	resources/img/real.png	0	0	100	70	0	0
+rear	resources/img/rear.png	0	0	100	70	0	0
+
+
+relstand		-	0	reml	0	-
+rerstand		-	0	remr	0	-
+
+reml1		-	0	reml	0	-
+reml2		-	0	reml	1	-
+reml3		-	0	reml	2	-
+reml4		-	0	reml	3	-
+reml5		-	0	reml	4	-
+reml6		-	0	reml	5	-
+reml7		-	0	reml	6	-
+reml8		-	0	reml	7	-
+
+remr1		-	0	remr	0	-
+remr2		-	0	remr	1	-
+remr3		-	0	remr	2	-
+remr4		-	0	remr	3	-
+remr5		-	0	remr	4	-
+remr6		-	0	remr	5	-
+remr7		-	0	remr	6	-
+remr8		-	0	remr	7	-
+reml		reml1;reml2;reml3;reml4;reml5;reml6;reml7;reml8;	0.5		true
+remr		remr1;remr2;remr3;remr4;remr5;remr6;remr7;remr8;	0.5		true
+
+real1		-	0	real	0	-
+real2		-	0	real	1	-
+real3		-	0	real	2	-
+real4		-	0	real	3	-
+real5		-	0	real	4	-
+real6		-	0	real	5	-
+real7		-	0	real	6	-
+real8		-	0	real	7	-
+
+rear1		-	0	rear	0	-
+rear2		-	0	rear	1	-
+rear3		-	0	rear	2	-
+rear4		-	0	rear	3	-
+rear5		-	0	rear	4	-
+rear6		-	0	rear	5	-
+rear7		-	0	rear	6	-
+rear8		-	0	rear	7	-
+
+real	real1;real2;real3;real4;real5;real6;real7;real8;	0.3		true
+rear	rear1;rear2;rear3;rear4;rear5;rear6;rear7;rear8;	0.3		true
+
+redl	resources/img/redl.png	0	0	100	70	0	0
+redr	resources/img/redr.png	0	0	100	70	0	0
+
+redl1		-	0	redl	0	-
+redl2		-	0	redl	1	-
+redl3		-	0	redl	2	-
+redl4		-	0	redl	3	-
+redl5		-	0	redl	4	-
+redl6		-	0	redl	5	-
+redl7		-	0	redl	6	-
+redl8		-	0	redl	7	-
+
+redr1		-	0	redr	0	-
+redr2		-	0	redr	1	-
+redr3		-	0	redr	2	-
+redr4		-	0	redr	3	-
+redr5		-	0	redr	4	-
+redr6		-	0	redr	5	-
+redr7		-	0	redr	6	-
+redr8		-	0	redr	7	-
+
+redl	redl1;redl2;redl3;redl4;redl5;redl6;redl7;redl8;redl8;	0.5		true
+redr	redr1;redr2;redr3;redr4;redr5;redr6;redr7;redr8;redl8;	0.5		true
+
+
+ieal	resources/img/ieal.png	0	0	100	100	0	0
+iear	resources/img/iear.png	0	0	100	100	0	0
+
+ieal1		-	0	ieal	0	-
+ieal2		-	0	ieal	1	-
+ieal3		-	0	ieal	2	-
+ieal4		-	0	ieal	3	-
+ieal5		-	0	ieal	4	-
+ieal6		-	0	ieal	5	-
+ieal7		-	0	ieal	6	-
+ieal8		-	0	ieal	7	-
+
+iear1		-	0	iear	0	-
+iear2		-	0	iear	1	-
+iear3		-	0	iear	2	-
+iear4		-	0	iear	3	-
+iear5		-	0	iear	4	-
+iear6		-	0	iear	5	-
+iear7		-	0	iear	6	-
+iear8		-	0	iear	7	-
+ielstand		-	0	ieal	0	-
+ierstand		-	0	iear	0	-
+
+ieml		-	0	ieal	0	-
+iemr		-	0	iear	0	-   
+ieal	ieal1;ieal2;ieal3;ieal4;ieal5;ieal6;ieal7;ieal8;	0.7		true
+iear	iear1;iear2;iear3;iear4;iear5;iear6;iear7;iear8;	0.7		true
+iedl8		-	0	bl	7	-
+iedr8		-	0	br	7	-
+iedl	bl1;bl2;bl3;bl4;bl5;bl6;bl7;iedl8;iedl8;	0.6		true
+iedr	br1;br2;br3;br4;br5;br6;br7;iedr8;iedl8;	0.6		true
+
+wavel	resources/img/wavel.png	0	0	100	100	0	0
+waver	resources/img/waver.png	0	0	100	100	0	0
+
+wavel1		-	0	wavel	0	-
+wavel2		-	0	wavel	1	-
+wavel3		-	0	wavel	2	-
+wavel4		-	0	wavel	3	-
+wavel5		-	0	wavel	4	-
+wavel6		-	0	wavel	5	-
+wavel7		-	0	wavel	6	-
+wavel8		-	0	wavel	7	-
+wavel9		-	0	wavel	8	-
+
+
+waver1		-	0	waver	0	-
+waver2		-	0	waver	1	-
+waver3		-	0	waver	2	-
+waver4		-	0	waver	3	-
+waver5		-	0	waver	4	-
+waver6		-	0	waver	5	-
+waver7		-	0	waver	6	-
+waver8		-	0	waver	7	-
+waver9		-	0	waver	8	-
+
+wavel	wavel1;wavel2;wavel3;wavel4;wavel5;wavel6;wavel7;wavel8;wavel9;		0.6		true
+waver	waver1;waver2;waver3;waver4;waver5;waver6;waver7;waver8;waver9;		0.6		true
+
+explode	resources/img/explode.png	0	0	70	150	0	0
+
+
+explode1		-	0	explode	0	-
+explode2		-	0	explode	1	-
+explode3		-	0	explode	2	-
+explode4		-	0	explode	3	-
+explode5		-	0	explode	4	-
+explode6		-	0	explode	5	-
+explode7		-	0	explode	6	-
+explode8		-	0	explode	7	-
+explode9		-	0	explode	8	-
+explode10		-	0	explode	9	-
+explode11		-	0	explode	10	-
+explode12		-	0	explode	11	-
+explode13		-	0	explode	12	-
+explode14		-	0	explode	13	-
+explode15		-	0	explode	14	-
+explode16		-	0	explode	15	-
+explode17		-	0	explode	16	-
+explode18		-	0	explode	17	-
+
+
+
+
+explode	explode1;explode2;explode3;explode4;explode5;explode6;explode7;explode8;explode9;explode10;explode11;explode12;explode13;explode14;explode15;explode16;explode17;explode18;	0.6		true
+
+target	resources/img/target.png	0	0	60	60	0	0
+
+
+target1		-	0	target	0	-
+target2		-	0	target	0	-
+target3		-	0	target	0	-
+target4		-	0	target	0	-
+target5		-	0	target	0	-
+
+
+target	target1;target2;target3;target4;target5;	0.1		true
+
+
+bossar	resources/img/bossar.png	0	0	160	130	0	0
+
+bossal1		-	0	bossar	0	x
+bossal2		-	0	bossar	1	x
+bossal3		-	0	bossar	2	x
+bossal4		-	0	bossar	3	x
+bossal5		-	0	bossar	4	x
+bossal6		-	0	bossar	5	x
+bossal7		-	0	bossar	6	x
+bossal8		-	0	bossar	7	x
+
+bossar1		-	0	bossar	0	-
+bossar2		-	0	bossar	1	-
+bossar3		-	0	bossar	2	-
+bossar4		-	0	bossar	3	-
+bossar5		-	0	bossar	4	-
+bossar6		-	0	bossar	5	-
+bossar7		-	0	bossar	6	-
+bossar8		-	0	bossar	7	-
+
+
+
+bossal	bossal1;bossal2;bossal3;bossal4;bossal5;bossal6;bossal7;bossal8;	0.3		true
+bossar	bossar1;bossar2;bossar3;bossar4;bossar5;bossar6;bossar7;bossar8;	0.3		true
+
+bossmr	resources/img/bossmr.png	0	0	160	130	0	0
+
+bossml1		-	0	bossmr	0	x
+bossml2		-	0	bossmr	1	x
+bossml3		-	0	bossmr	2	x
+bossml4		-	0	bossmr	3	x
+bossml5		-	0	bossmr	4	x
+bossml6		-	0	bossmr	5	x
+bossml7		-	0	bossmr	6	x
+bossml8		-	0	bossmr	7	x
+
+bossmr1		-	0	bossmr	0	-
+bossmr2		-	0	bossmr	1	-
+bossmr3		-	0	bossmr	2	-
+bossmr4		-	0	bossmr	3	-
+bossmr5		-	0	bossmr	4	-
+bossmr6		-	0	bossmr	5	-
+bossmr7		-	0	bossmr	6	-
+bossmr8		-	0	bossmr	7	-
+
+bosslstand		-	0	bossmr	0	x
+bossrstand		-	0	bossmr	0	-
+
+
+bossml	bossml1;bossml2;bossml3;bossml4;bossml5;bossml6;bossml7;bossml8;	0.7		true
+bossmr	bossmr1;bossmr2;bossmr3;bossmr4;bossmr5;bossmr6;bossmr7;bossmr8;	0.7		true
+
+bossdl8		-	0	bl	7	-
+bossdr8		-	0	br	7	-
+bossdl		bl1;bl2;bl3;bl4;bl5;bl6;bl7;bossdl8;	0.6		true
+bossdr		br1;br2;br3;br4;br5;br6;br7;bossdr8;	0.6		true
+
+bossthl	resources/img/bossthl.png	0	0	160	130	0	0
+
+bossthr1		-	0	bossthl	0	x
+bossthr2		-	0	bossthl	1	x
+bossthr3		-	0	bossthl	2	x
+bossthr4		-	0	bossthl	3	x
+bossthr5		-	0	bossthl	4	x
+bossthr6		-	0	bossthl	5	x
+bossthr7		-	0	bossthl	6	x
+bossthr8		-	0	bossthl	7	x
+bossthr9		-	0	bossthl	8	x
+bossthr10		-	0	bossthl	9	x
+bossthr11		-	0	bossthl	10	x
+bossthr12		-	0	bossthl	11	x
+
+bossthl1		-	0	bossthl	0	-
+bossthl2		-	0	bossthl	1	-
+bossthl3		-	0	bossthl	2	-
+bossthl4		-	0	bossthl	3	-
+bossthl5		-	0	bossthl	4	-
+bossthl6		-	0	bossthl	5	-
+bossthl7		-	0	bossthl	6	-
+bossthl8		-	0	bossthl	7	-
+bossthl9		-	0	bossthl	8	-
+bossthl10		-	0	bossthl	9	-
+bossthl11		-	0	bossthl	10	-
+bossthl12		-	0	bossthl	11	-
+
+
+bossthl		bossthl1;bossthl2;bossthl3;bossthl4;bossthl5;bossthl6;bossthl7;bossthl8;bossthl9;bossthl10;bossthl11;bossthl12;bossthl12;	0.2		true
+bossthr		bossthr1;bossthr2;bossthr3;bossthr4;bossthr5;bossthr6;bossthr7;bossthr8;bossthr9;bossthr10;bossthr11;bossthr12;bossthl12;	0.2		true
+
+bossrsl		resources/img/bossrsl.png	0	0	160	130	0	0
+
+bossrsr1		-	0	bossrsl	0	x
+bossrsr2		-	0	bossrsl	1	x
+bossrsr3		-	0	bossrsl	2	x
+bossrsr4		-	0	bossrsl	3	x
+bossrsr5		-	0	bossrsl	4	x
+bossrsr6		-	0	bossrsl	5	x
+bossrsr7		-	0	bossrsl	6	x
+bossrsr8		-	0	bossrsl	7	x
+bossrsr9		-	0	bossrsl	8	x
+bossrsr10		-	0	bossrsl	9	x
+bossrsr11		-	0	bossrsl	10	x
+bossrsr12		-	0	bossrsl	11	x
+
+bossrsl1		-	0	bossrsl	0	-
+bossrsl2		-	0	bossrsl	1	-
+bossrsl3		-	0	bossrsl	2	-
+bossrsl4		-	0	bossrsl	3	-
+bossrsl5		-	0	bossrsl	4	-
+bossrsl6		-	0	bossrsl	5	-
+bossrsl7		-	0	bossrsl	6	-
+bossrsl8		-	0	bossrsl	7	-
+bossrsl9		-	0	bossrsl	8	-
+bossrsl10		-	0	bossrsl	9	-
+bossrsl11		-	0	bossrsl	10	-
+bossrsl12		-	0	bossrsl	11	-
+
+
+bossrsl		bossrsl1;bossrsl2;bossrsl3;bossrsl4;bossrsl5;bossrsl6;bossrsl7;bossrsl8;bossrsl9;bossrsl10;bossrsl11;bossrsl12;	0.2		true
+bossrsr		bossrsr1;bossrsr2;bossrsr3;bossrsr4;bossrsr5;bossrsr6;bossrsr7;bossrsr8;bossrsr9;bossrsr10;bossrsr11;bossrsr12;	0.2		true
+
+
+bossbr		resources/img/bossbr.png	0	0	160	130	0	0
+
+bossbl1		-	0	bossbr	0	x
+bossbl2		-	0	bossbr	1	x
+bossbl3		-	0	bossbr	2	x
+bossbl4		-	0	bossbr	3	x
+
+bossbr1		-	0	bossbr	0	-
+bossbr2		-	0	bossbr	1	-
+bossbr3		-	0	bossbr	2	-
+bossbr4		-	0	bossbr	3	-
+
+
+
+
+
+bossbl		bossbl1;bossbl2;bossbl3;bossbl4;bossbl4;	0.1		true
+bossbr		bossbr1;bossbr2;bossbr3;bossbr4;bossbr4;	0.1		true
+
+bossul3		-	0	bossthl	3	-
+bossur3		-	0	bossthl	3	x
+bossul		bossthl1;bossthl2;bossthl3;bossul3	0.1		true
+bossur		bossthr1;bossthr2;bossthr3;bossur3	0.1		true

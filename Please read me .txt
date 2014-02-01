@@ -1,0 +1,18 @@
+I import the JGame project directly. So "tutorials" and "my game" package is not my design. 
+
+All the thing I write is in the Ninjia Battle package.
+
+Also , I don't know if you want a release version program or a project like this. No description online;
+
+So I upload the whole thing.
+
+
+
+
+Citation:
+
+Images and Audio are from Internet. Most of them are from an website 66RPG.com. 
+
+BGM1:  éœ¤Ë×ß¤ë³à¤¤²Ð¹â¡«¥Ê¥ë¥¬¥¯¥ë¥¬ from Monster Hunter , Capcom
+
+BGM2:	Control Crisis from King of Fighters 97 , SNK
